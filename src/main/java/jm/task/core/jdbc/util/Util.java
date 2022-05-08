@@ -1,6 +1,7 @@
 package jm.task.core.jdbc.util;
 
 import jm.task.core.jdbc.dao.UserDaoHibernateImpl;
+import jm.task.core.jdbc.model.User;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -36,7 +37,7 @@ public class Util {
 
                     configuration.setProperties(settings);
 
-                    configuration.addAnnotatedClass(UserDaoHibernateImpl.class);
+                    configuration.addAnnotatedClass(User.class);
 
                     ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                             .applySettings(configuration.getProperties()).build();
